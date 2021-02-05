@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Charlotte's Solar System</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    
+    body{
+      background: black;
+      position: relative;
+    }
+    .planet, .orbit{
+      position: fixed;
+      width: 5%;
+      
+      background: blue;
+      border-radius: 100%;
+    }
+    .planet:after{
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+      .sun{
+        width: var(--sun-diameter);
+        margin-top: calc(0px - (var(--sun-diameter) / 2));
+        margin-left: calc(0px - (var(--sun-diameter) / 2));
+        animation-name: pulse;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes pulse {
+        1% {
+          border-width: 1px;
+        }
+        50% {
+          border-width: 5px;
+        }
+      }
+
+      .planet.mercury{
+        width: var(--mercury-diameter);
+        margin-top: calc(0px - (var(--mercury-diameter) / 2));
+        margin-left: calc(0px - (var(--mercury-diameter) / 2));
+        left: var(--mercury-left);
+      }
+
+      .planet.venus{
+        width: var(--venus-diameter);
+        margin-top: calc(0px - (var(--venus-diameter) / 2));
+        margin-left: calc(0px - (var(--venus-diameter) / 2));
+        left: var(--venus-left);
+      }
+
+      .planet.earth{
+        width: var(--earth-diameter);
+        margin-top: calc(0px - (var(--earth-diameter) / 2));
+        margin-left: calc(0px - (var(--earth-diameter) / 2));
+        left: var(--earth-left);
+      }
+
+      .planet.mars{
+        width: var(--mars-diameter);
+        margin-top: calc(0px - (var(--mars-diameter) / 2));
+        margin-left: calc(0px - (var(--mars-diameter) / 2));
+        left: var(--mars-left);
+      }
+
+      .planet.jupiter{
+        width: var(--jupiter-diameter);
+        margin-top: calc(0px - (var(--jupiter-diameter) / 2));
+        margin-left: calc(0px - (var(--jupiter-diameter) / 2));
+        left: var(--jupiter-left);
+      }
+
+      .planet.saturn{
+        width: var(--saturn-diameter);
+        margin-top: calc(0px - (var(--saturn-diameter) / 2));
+        margin-left: calc(0px - (var(--saturn-diameter) / 2));
+        left: var(--saturn-left);
+      }
+
+      .planet.uranus{
+        width: var(--uranus-diameter);
+        margin-top: calc(0px - (var(--uranus-diameter) / 2));
+        margin-left: calc(0px - (var(--uranus-diameter) / 2));
+        left: var(--uranus-left);
+      }
+
+      .planet.neptune{
+        width: var(--neptune-diameter);
+        margin-top: calc(0px - (var(--neptune-diameter) / 2));
+        margin-left: calc(0px - (var(--neptune-diameter) / 2));
+        left: var(--neptune-left);
+      }
+
+      .planet.pluto{
+        width: var(--pluto-diameter);
+        margin-top: calc(0px - (var(--pluto-diameter) / 2));
+        margin-left: calc(0px - (var(--pluto-diameter) / 2));
+        left: var(--pluto-left);
+      }
+    .orbit{
+      background: none;
+      border: 1px dashed white;
+    }
+      .orbit.mercury{
+        width: var(--mercury-diameter);
+        height: var(--mercury-diameter);
+      }
+
+      
+
+/*******************************************/
+/*******************************************/
+/*******************************************/
+/* CHARLOTTE, ONLY CHANGE STUFF BELOW HERE */
+/*******************************************/
+/*******************************************/
+/*******************************************/
+
+      .planet.sun{
+        --sun-diameter: 30%;    
+        background: yellow;
+        left: 0%;
+        top: 50%;
+        border: 1px solid orange;
+        
+      }
+
+      .planet.mercury{
+        --mercury-diameter: 10%;    
+        background: grey;
+        --mercury-left: 10%;
+        top: 50%;
+      }
+
+      .planet.venus{
+        --venus-diameter: 10%;    
+        background: blue;
+        --venus-left: 20%;
+        top: 50%;
+      }
+
+      .planet.earth{
+        --earth-diameter: 10%;    
+        background: turquoise;
+        --earth-left: 30%;
+        top: 50%;
+      }
+
+      .planet.mars{
+        --mars-diameter: 10%;    
+        background: red;
+        --mars-left: 40%;
+        top: 50%;
+      }
+
+      .planet.jupiter{
+        --jupiter-diameter: 10%;    
+        background: blueviolet;
+        left: 50%;
+        top: 50%;
+      }
+
+      .planet.saturn{
+        --saturn-diameter: 10%;    
+        background: cornflowerblue;
+        left: 60%;
+        top: 50%;
+      }
+
+      .planet.uranus{
+        --uranus-diameter: 10%;    
+        background: turquoise;
+        left: 70%;
+        top: 50%;
+      }
+
+      .planet.neptune{
+        --neptune-diameter: 10%;    
+        background: blue;
+        left: 80%;
+        top: 50%;
+      }
+
+      .planet.pluto{
+        --pluto-diameter: 10%;    
+        background: white;
+        left: 90%;
+        top: 50%;
+      }
+
+/*******************************************/
+/*******************************************/
+/*******************************************/
+/* CHARLOTTE, ONLY CHANGE STUFF ABOVE HERE */
+/*******************************************/
+/*******************************************/
+/*******************************************/
+
+
+  </style>
+  
+</head>
+<body>
+  <div class="planet sun"></div>
+  <div class="planet mercury"></div>
+  <div class="orbit mercury"></div>
+  <div class="planet venus"></div>
+  <div class="planet earth"></div>
+  <div class="planet mars"></div>
+  <div class="planet jupiter"></div>
+  <div class="planet saturn"></div>
+  <div class="planet uranus"></div>
+  <div class="planet neptune"></div>
+  <div class="planet pluto"></div>
+</body>
+</html>
