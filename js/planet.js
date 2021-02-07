@@ -13,49 +13,49 @@ class OrbitingPlanet extends HTMLElement {
     this.innerHTML = `
       <style>
       
-      @keyframes rotation {
-        from {
-          transform: rotate(0deg);
+        @keyframes rotation {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(359deg);
+          }
         }
-        to {
-          transform: rotate(359deg);
+
+        .orbit {
+          background: none;
+          border: 1px dashed white;
+          animation-name: rotation;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
         }
-      }
 
-      .orbit {
-        background: none;
-        border: 1px dashed white;
-        animation-name: rotation;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-      }
+        .planet {
+          position: absolute;
+          right: 0;
+        } 
 
-      .planet {
-        position: absolute;
-        right: 0;
-      } 
+        .planet-name{
+          position: absolute;
+          top: -10px;
+          line-height: calc(0px + ${diameter});
+          color: white;
+          text-align: center;
+        }
 
-      .planet-name{
-        position: absolute;
-        top: -10px;
-        line-height: calc(0px + ${diameter});
-        color: white;
-        text-align: center;
-      }
+        .${planetName} {
+          width: ${orbitDiameter};
+          margin-left: calc(0px - ${orbitDiameter} / 2);
+          margin-top: calc(0px - (${orbitDiameter} / 2));
+          animation-duration: ${yearDuration};
+        }
 
-      .${planetName} {
-        width: ${orbitDiameter};
-        margin-left: calc(0px - ${orbitDiameter} / 2);
-        margin-top: calc(0px - (${orbitDiameter} / 2));
-        animation-duration: ${yearDuration};
-      }
-
-      .${planetName} .planet {
-        margin-right: calc(0px - ${diameter} / 2);
-        margin-top: calc(0px - ${diameter} / 2);
-        width: ${diameter};
-        background-color: ${colour};
-      }
+        .${planetName} .planet {
+          margin-right: calc(0px - ${diameter} / 2);
+          margin-top: calc(0px - ${diameter} / 2);
+          width: ${diameter};
+          background-color: ${colour};
+        }
 
       </style>
       <div class="${planetName} orbit">
