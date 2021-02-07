@@ -4,7 +4,8 @@ class OrbitingPlanet extends HTMLElement {
   }
 
   connectedCallback() {
-    const planetName = this.getAttribute("name");
+    const planetFriendlyName = this.getAttribute("name");
+    const planetName = planetFriendlyName.replaceAll(" ", "-").toLowerCase();
     const diameter = this.getAttribute("diameter");
     const orbitDiameter = this.getAttribute("orbitDiameter");
     const yearDuration = this.getAttribute("yearDuration");
@@ -12,6 +13,15 @@ class OrbitingPlanet extends HTMLElement {
     this.innerHTML = `
       <style>
       
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+
       .orbit {
         background: none;
         border: 1px dashed white;
@@ -23,6 +33,14 @@ class OrbitingPlanet extends HTMLElement {
       .planet {
         position: absolute;
         right: 0;
+      } 
+
+      .planet-name{
+        position: absolute;
+        top: -10px;
+        line-height: calc(0px + ${diameter});
+        color: white;
+        text-align: center;
       }
 
       .${planetName} {
@@ -38,9 +56,12 @@ class OrbitingPlanet extends HTMLElement {
         width: ${diameter};
         background-color: ${colour};
       }
+
       </style>
       <div class="${planetName} orbit">
-        <div class="planet"></div>
+        <div class="planet">
+          <div class="planet-name">${planetFriendlyName}</div>
+        </div>
       </div>`;
   }
 }
