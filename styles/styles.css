@@ -8,17 +8,10 @@ body {
 .planet,
 .orbit {
   position: fixed;
-  width: 5%;
-  background: blue;
   border-radius: 100%;
   top: 50%;
 }
-.planet:after,
-.orbit:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
-}
+
 main {
   display: block;
   width: 50%;

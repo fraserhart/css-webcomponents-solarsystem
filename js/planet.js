@@ -22,6 +22,13 @@ class OrbitingPlanet extends HTMLElement {
           }
         }
 
+        .planet:after,
+        .orbit:after {
+          content: "";
+          display: block;
+          padding-bottom: 100%;
+        }
+
         .orbit {
           background: none;
           border: 1px dashed white;
