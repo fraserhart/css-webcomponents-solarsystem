@@ -6,9 +6,9 @@ class OrbitingPlanet extends HTMLElement {
   connectedCallback() {
     const planetFriendlyName = this.getAttribute("name");
     const planetName = planetFriendlyName.replaceAll(" ", "-").toLowerCase();
-    const diameter = this.getAttribute("diameter");
-    const orbitDiameter = this.getAttribute("orbitDiameter");
-    const yearDuration = this.getAttribute("yearDuration");
+    const diameter = `${this.getAttribute("diameter")}px`;
+    const orbitDiameter = `${this.getAttribute("orbitDiameter")}%`;
+    const yearDuration = `${this.getAttribute("yearDuration")}s`;
     const colour = this.getAttribute("colour");
     this.innerHTML = `
       <style>
